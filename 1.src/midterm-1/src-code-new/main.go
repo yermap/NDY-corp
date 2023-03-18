@@ -19,6 +19,7 @@ func main() {
 	r.POST("/signup", controllers.Signup)
 	r.POST("/login", controllers.Login)
 	r.GET("/validate", middleware.RequireAuth, controllers.Validate)
-
+	r.GET("/product", controllers.ListProducts)
+	r.POST("/product", controllers.CreateProduct)
 	r.Run()
 }
