@@ -20,6 +20,7 @@ func main() {
 	r.POST("/login", controllers.Login)
 	r.GET("/validate", middleware.RequireAuth, controllers.Validate)
 	r.GET("/product", controllers.ListProducts)
-	r.POST("/product", controllers.CreateProduct)
+	r.POST("/product", middleware.RequireAuth, controllers.CreateProduct)
+	r.POST("/comment/:id", middleware.RequireAuth, controllers.CreateComment)
 	r.Run()
 }
