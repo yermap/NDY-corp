@@ -6,6 +6,6 @@ type Comment struct {
 	gorm.Model
 	Body    string  `json:"body"`
 	User    uint    `json:"user"`
-	Rating  int     `json:"rating"`
-	Product float32 `json:"product"`
+	Rating  float32 `json:"rating"`
+	Product int     `json:"product"`
 }
