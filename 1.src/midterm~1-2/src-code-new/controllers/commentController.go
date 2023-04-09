@@ -11,7 +11,7 @@ import (
 func CreateComment(c *gin.Context) {
 	var body struct {
 		Body   string
-		Rating int
+		Rating float32
 	}
 	params := c.Params
 
