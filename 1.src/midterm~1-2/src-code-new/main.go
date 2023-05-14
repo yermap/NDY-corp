@@ -22,5 +22,9 @@ func main() {
 	r.GET("/product", controllers.ListProducts)
 	r.POST("/product", middleware.RequireAuth, controllers.CreateProduct)
 	r.POST("/comment/:id", middleware.RequireAuth, controllers.CreateComment)
+	r.POST("/order", middleware.RequireAuth, controllers.CreateOrder)
+	r.PATCH("/order/:id", middleware.RequireAuth, controllers.ChangeStatus)
+	r.DELETE("/order/:id", middleware.RequireAuth, controllers.ChangeStatus)
+
 	r.Run()
 }
